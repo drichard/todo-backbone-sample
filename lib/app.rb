@@ -14,6 +14,7 @@ class Todo
   property :id,         Serial
   property :text,       Text
   property :created_at, DateTime, :default => lambda { |r,p| Time.now }
+  property :done,       Boolean, :default => false
 end
 
 DataMapper.finalize
@@ -47,7 +48,8 @@ put '/todos/:id' do
 end
 
 post '/todos' do
-  Todo.create(params[:todo])
+  data = JSON.parse(request.body.read)
+  Todo.create(data)
 end
 
 delete '/todos/:id' do
