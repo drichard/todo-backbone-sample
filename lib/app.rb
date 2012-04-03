@@ -22,8 +22,14 @@ DataMapper.auto_migrate!
 todo = Todo.create(text: "First todo")
 todo = Todo.create(text: "second todo")
  
+# API
+
 before '/todo*' do
   content_type 'application/json'
+end
+
+get '/' do
+  redirect "index.html"
 end
 
 get '/todos' do

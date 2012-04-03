@@ -1,0 +1,33 @@
+.shell {
+  padding-top: 10px;
+}
+
+.input-append input.span6 {
+  margin-bottom: 0;
+  width: 91%;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+.bordered {
+  border: 1px solid #DDD;
+  border-radius: 4px;
+}
+
+.todo-item:first-child {
+  border-top: none;
+}
+
+.todo-item {
+  padding: 5px;
+  height: 25px;
+  border-top: 1px solid #DDD;
+}
+
+.todo-item:hover {
+  background: #FAFAFA;
+  cursor: pointer;
+}
