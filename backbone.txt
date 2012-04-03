@@ -1,0 +1,27 @@
+backbone app structure
+
+client
+  libs
+    jquery
+    backbone.js
+    require.js
+    handlebars
+
+  testing
+    jasmine
+    phatomJS, headless browser
+
+  layout
+    twitter bootstrap
+
+  tools
+    brunch
+    grunt
+    backbone boilerplate
+
+  frameworks
+    chaplin
+
+server
+  ruby: sinatra
+  js: node
