@@ -6,7 +6,7 @@ require 'data_mapper'
 DataMapper::Logger.new($stdout, :debug)
 
 # An in-memory Sqlite3 connection:
-DataMapper.setup(:default, 'sqlite::memory:')
+DataMapper.setup(:default, 'sqlite:data.db')
 
 class Todo
   include DataMapper::Resource
@@ -18,10 +18,10 @@ class Todo
 end
 
 DataMapper.finalize
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
 
-todo = Todo.create(text: "First todo")
-todo = Todo.create(text: "second todo")
+#todo = Todo.create(text: "First todo")
+#todo = Todo.create(text: "second todo")
  
 # API
 
@@ -30,7 +30,8 @@ before '/todo*' do
 end
 
 get '/' do
-  redirect "index.html"
+  @todos = Todo.all
+  erb :index, views: "lib/public"
 end
 
 get '/todos' do
@@ -44,15 +45,18 @@ end
 
 put '/todos/:id' do
   todo = Todo.get(params[:id])
-  todo.update(params[:todo])
+  todo.update(json_data)
 end
 
 post '/todos' do
-  data = JSON.parse(request.body.read)
-  Todo.create(data)
+  Todo.create(json_data)
 end
 
 delete '/todos/:id' do
   todo = Todo.get(params[:id])
   todo.destroy
+end
+
+def json_data
+  JSON.parse(request.body.read)
 end

@@ -1,3 +1,11 @@
+.hidden {
+  opacity: 0;
+}
+
+.transition-opacity {
+  -webkit-transition: opacity 400ms ease-out;
+}
+
 .shell {
   padding-top: 10px;
 }
@@ -23,11 +31,33 @@ ul {
 
 .todo-item {
   padding: 5px;
-  height: 25px;
   border-top: 1px solid #DDD;
+  overflow: hidden;
 }
 
 .todo-item:hover {
   background: #FAFAFA;
   cursor: pointer;
+}
+
+.todo-item.new {
+  background: #CACACA;
+}
+
+.transition-bg {
+  -webkit-transition: background 400ms ease-out;
+}
+
+.todo-item .text {
+  float: left;
+  font-size: 16px;
+}
+
+.todo-item .btn {
+  float:right;
+  opacity: 0;
+}
+
+.todo-item:hover .btn {
+  opacity: 1;
 }

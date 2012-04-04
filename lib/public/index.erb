@@ -6,6 +6,14 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <script data-main="app/main" src="assets/js/libs/require.js"></script>
+    <script>
+      define("bootstrap", ["collections/todos"], function(TodoList) {
+        var bootstrap = function() {
+          TodoList.reset(<%= @todos.to_json %>);
+        }
+        return bootstrap;
+      });
+    </script>
   </head>
   <body>
     <div class="shell container-fluid">
@@ -14,19 +22,15 @@
       </div>
       <div class="row-fluid">
         <div class="span2">
-          <!--Sidebar content-->
-          <div class="well">
-            <h3>Stats</h3>
-            <div id="todo-stats">
-            </div>
-          </div>
+          <div id="todo-stats" class="well hidden transition-opacity"></div>
         </div>
+
         <div class="span10">
           <div class="row">
             <div class="span8">
               <div id="todo-add">
                 <div id="todo-add" class="input-append">
-                  <input class="span6" size="16" type="text"><button class="btn" type="button">Add</button>
+                  <input class="span6" type="text" placeholder="Remember the milk..."><button class="btn" type="button">Add</button>
                 </div>
               </div>
               <ul id="todo-list" class="bordered">
