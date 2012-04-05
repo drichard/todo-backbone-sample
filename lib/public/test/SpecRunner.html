@@ -7,24 +7,22 @@
   <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.2.0.rc3/jasmine_favicon.png">
   <link rel="stylesheet" type="text/css" href="lib/jasmine-1.2.0.rc3/jasmine.css">
 
-  <script type="text/javascript" src="lib/jasmine-1.2.0.rc3/jasmine.js"></script>
-  <script type="text/javascript" src="lib/jasmine-1.2.0.rc3/jasmine-html.js"></script>
+  <script src="lib/jasmine-1.2.0.rc3/jasmine.js"></script>
+  <script src="lib/jasmine-1.2.0.rc3/jasmine-html.js"></script>
 
-  <script type="text/javascript" src="../assets/js/libs/require.js"></script>
-  <script type="text/javascript">
+  <script data-main="../app/config" src="../assets/js/libs/require.js"></script>
+  <script> 
     require.config({
       baseUrl: "../app/",
       paths: {
-        spec : "../test/spec/",
-        jquery: '../assets/js/libs/jquery-1.7.2',
-        underscore: '../assets/js/libs/underscore',
-        backbone: '../assets/js/libs/backbone',
-        text: '../assets/js/plugins/text',
+       spec : "../test/spec/"
       } 
     });
 
     require([
+
       "spec/models/todo"
+
       ], function() {
         jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
         jasmine.getEnv().execute();
