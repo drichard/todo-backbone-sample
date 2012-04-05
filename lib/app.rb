@@ -25,7 +25,7 @@ DataMapper.auto_upgrade!
  
 # API
 
-before '/todo*' do
+before '/todos*' do
   content_type 'application/json'
 end
 
@@ -46,10 +46,12 @@ end
 put '/todos/:id' do
   todo = Todo.get(params[:id])
   todo.update(json_data)
+  todo.to_json
 end
 
 post '/todos' do
-  Todo.create(json_data)
+  todo = Todo.create(json_data)
+  todo.to_json
 end
 
 delete '/todos/:id' do
