@@ -8,9 +8,9 @@
     <script data-main="app/config" src="assets/js/libs/require.js"></script>
     <script>
       // define bootstrap inside .erb so we can easily inject the default collection
-      define("bootstrap", ["collections/todos"], function(TodoList) {
-        return function() {
-          TodoList.reset(<%= @todos.to_json %>);
+      define("bootstrap", [], function() {
+        return function(todoList) {
+          todoList.reset(<%= @todos.to_json %>);
         };
       });
 
