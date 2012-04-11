@@ -1,12 +1,7 @@
-define ["views/stats", "collections/todos"], (TodoStatsView, TodoList) ->
+define ["views/stats"], (TodoStatsView) ->
   describe "TodoStatsView", ->
     beforeEach ->
-      @todoList = new TodoList
-      options = {
-        todoList: @todoList
-      }
-
-      @view = new TodoStatsView(options)
+      @view = new TodoStatsView(@viewOptions())
 
     it "should render on the 'all' event", ->
       spy = spyOn(@view.$el, "html").andCallThrough()

@@ -1,14 +1,7 @@
-define ["views/todoadd", "collections/todos"], (TodoAddView, TodoList) ->
+define ["views/todoadd"], (TodoAddView) ->
   describe "TodoAddView", ->
     beforeEach ->
-      @todoList = new TodoList
-      @todoList.url = "/"
-
-      options = {
-        todoList: @todoList
-      }
-
-      @view = new TodoAddView(options)
+      @view = new TodoAddView(@viewOptions())
       @view.render()
 
     it "should create a new todo on add button click", ->
