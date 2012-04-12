@@ -1,15 +1,20 @@
 # Helper functions available to all specs in the this.scope.
 
-define ["collections/todos"], (TodoList) ->
+define ["models/todo", "collections/todos", "views/todoedit"], (Todo, TodoList, TodoEditor) ->
   beforeEach ->
 
-    # Returns the default options for todos views. Most importantly,
-    # it offers an empty todo collection.
-    @viewOptions = ->
-      # set fake url to not hit the DB with each test.
-      # TODO use sinon or stub out Backbone.sync() for better handling
-      @todoList = new TodoList
-      @todoList.url = "/"
+    # set fake url to not hit the DB with each test.
+    # TODO use sinon or stub out Backbone.sync() for better handling
+    @todoList = new TodoList
+    @todoList.url = "/"
 
-      options =
-        todoList: @todoList
+    @todo = new Todo(text: "foo todo") 
+    @todo.urlRoot = "/"
+
+    @editor = new TodoEditor
+
+    # Returns the default options for todos views.
+    @viewOptions =
+      model     : @todo
+      collection  : @todoList
+      editor    : @editor
