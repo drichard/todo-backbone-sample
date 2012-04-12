@@ -8,7 +8,7 @@ define ["models/todo", "collections/todos", "views/todoedit"], (Todo, TodoList, 
     @todoList = new TodoList
     @todoList.url = "/"
 
-    @todo = new Todo(text: "foo todo") 
+    @todo = new Todo(text: "new todo") 
     @todo.urlRoot = "/"
 
     @editor = new TodoEditor

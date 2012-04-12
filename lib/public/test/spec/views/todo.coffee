@@ -5,7 +5,7 @@ define ["views/todo"], (TodoView) ->
       @view.render()
 
     it "should render itself", ->
-      expect(@view.$el.text()).toMatch /foo/
+      expect(@view.$el.text()).toMatch /new todo/
 
     it "should remove itself when clicking on 'done'", ->
       spyOn(@view.$el, "remove")
