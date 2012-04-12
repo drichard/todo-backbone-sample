@@ -18,9 +18,5 @@ define ["views/todo"], (TodoView) ->
 
     it "should enter edit mode when dbl clicking the element", ->
       spyOn(@view.editor, "attach")
-      @view.$(".todo-display").dblclick()
+      @view.$el.dblclick()
       expect(@view.editor.attach).toHaveBeenCalled()
-
-
-
-
