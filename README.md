@@ -28,7 +28,7 @@ Therefore:
 `ruby -rubygems lib/app.rb`
 Run at: http://localhost:4567/test/SpecRunner.html
 
-The specs are written in CoffeScript simply out of curiosity. The spec runner will ignore all .coffee files and only execute the compiled .js files.
+The specs are written in CoffeeScript simply out of curiosity. The spec runner will ignore all .coffee files and only execute the compiled .js files.
 
 ##License
 Do What The Fuck You Want To Public License (WTFPL)
