@@ -5,9 +5,10 @@ require 'data_mapper'
 # If you want the logs displayed you have to do this before the call to setup
 DataMapper::Logger.new($stdout, :debug)
 
-# An in-memory Sqlite3 connection:
+# A Sqlite3 connection:
 DataMapper.setup(:default, 'sqlite:data.db')
 
+# Simple Todo model
 class Todo
   include DataMapper::Resource
 
@@ -20,18 +21,16 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-#todo = Todo.create(text: "First todo")
-#todo = Todo.create(text: "second todo")
- 
-# API
 
-before '/todos*' do
-  content_type 'application/json'
-end
-
+# Deliver index file with a bootstrapped todo collection.
 get '/' do
   @todos = Todo.all
   erb :index, views: "lib/public"
+end
+
+# API
+before '/todos*' do
+  content_type 'application/json'
 end
 
 get '/todos' do
@@ -59,6 +58,7 @@ delete '/todos/:id' do
   todo.destroy
 end
 
+# Transforms the request body into JSON.
 def json_data
   JSON.parse(request.body.read)
 end
