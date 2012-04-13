@@ -2,8 +2,8 @@ define ["views/todoedit"], (TodoEditor) ->
   describe "TodoEditor", ->
     beforeEach ->
       @view = new TodoEditor
-      setFixtures(sandbox(id: "todo-item"))
-      @$element = $("#todo-item")
+      @$element = $("<div><div id='todo-item'></div><div>")
+      setFixtures(@$element)
 
     describe "attaching", ->
       it "should hide the element", ->

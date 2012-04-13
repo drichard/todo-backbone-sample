@@ -28,15 +28,10 @@ define ["models/todo", "collections/todos"], (Todo, TodoList) ->
        @collection.add({done: false, text: "uncompleted task"})
        @collection.add({done: true, text: "done task"})
 
-     it "should return the remaining count", ->
-       count = @collection.getRemainingCount()
+     it "should return the remaining todos", ->
+       count = @collection.getRemaining().length
        expect(count).toEqual(1)
 
-     it "should return the completed count", ->
-       count = @collection.getCompletedCount()
+     it "should return the completed todos", ->
+       count = @collection.getCompleted().length
        expect(count).toEqual(1)
-
-     it "should return the total count", ->
-       count = @collection.getTotalCount()
-       expect(count).toEqual(2)
-

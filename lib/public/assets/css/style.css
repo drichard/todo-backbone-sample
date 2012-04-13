@@ -2,6 +2,14 @@
   opacity: 0;
 }
 
+.centered {
+  text-align: center;
+}
+
+.padding-default {
+  padding: 10px;
+}
+
 .transition-opacity {
   -webkit-transition: opacity 400ms ease-out;
 }
