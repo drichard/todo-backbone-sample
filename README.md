@@ -1,6 +1,6 @@
 A sample todo application built with Backbone and require.js.
 
-This is yet another todo app built in MV\* style. It is inspired by todo-mvc and backbone-boilerplate. I used it to teach myself the basics of idiomatic backbone apps, correct usage of requirejs, strictly modular app composition and easy jasmine testing. 
+This is yet another todo app built in MV\* style. It is inspired by [todomvc](https://github.com/addyosmani/todomvc) and [backbone-boilerplate](https://github.com/backbone-boilerplate/backbone-boilerplate). I used it to teach myself the basics of idiomatic backbone apps, correct usage of requirejs, strictly modular app composition and easy jasmine testing. 
 
 You might find this useful if you are looking for a backbone/requirejs/sinatra/bootstrap setup for your next app.
 
@@ -30,6 +30,9 @@ Run at: http://localhost:4567/test/SpecRunner.html
 
 The specs are written in CoffeeScript simply out of curiosity. The spec runner will ignore all .coffee files and only execute the compiled .js files.
 
+##What's missing
+* There is no configuration file for the [RequrieJS optimizer](http://requirejs.org/docs/optimization.html) yet. This means all your script files are served individually. You do not want that in production.
+* You cannot run the test suite in a headless mode (yet).
 
 ##License
-Do What The Fuck You Want To Public License (WTFPL)
+Do What The Fuck You Want To Public License ([WTFPL](http://sam.zoy.org/wtfpl/))
