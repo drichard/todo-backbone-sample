@@ -1,5 +1,4 @@
-A sample todo application built with Backbone and require.js.
-
+##Overview
 This is yet another todo app built in MV\* style. It is inspired by [todomvc](https://github.com/addyosmani/todomvc) and [backbone-boilerplate](https://github.com/backbone-boilerplate/backbone-boilerplate). I used it to teach myself the basics of idiomatic backbone apps, correct usage of requirejs, strictly modular app composition and easy jasmine testing. 
 
 You might find this useful if you are looking for a backbone/requirejs/sinatra/bootstrap setup for your next app.
