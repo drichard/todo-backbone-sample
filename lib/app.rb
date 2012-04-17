@@ -33,6 +33,9 @@ before '/todos*' do
   content_type 'application/json'
 end
 
+# !!!
+# Be Careful! There is no authentication in place and no sanitizing of the data. This is simply a convenience api.
+
 get '/todos' do
   Todo.all.to_json
 end

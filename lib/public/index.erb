@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>todos</title>
+    <title>Todos</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <script data-main="app/config" src="assets/js/libs/require.js"></script>
     <script>
-      // define bootstrap inside .erb so we can easily inject the default collection
+      // define the bootstrap module inside index.erb so we can easily inject the default collection
       define("bootstrap", [], function() {
         return function(todoList) {
           todoList.reset(<%= @todos.to_json %>);
