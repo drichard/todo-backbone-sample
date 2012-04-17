@@ -18,14 +18,16 @@ You might find this useful if you are looking for a backbone/requirejs/sinatra/b
 
 ##Start
 `ruby -rubygems lib/app.rb`
-View at: http://localhost:4567
+
+View at: [localhost:4567](http://localhost:4567)
 
 ##Run test suite
 The test suite should be served by a local file server because otherwise the browser will complain about cross-origin issues (requirejs still loads the modules async).
 
 Therefore:
 `ruby -rubygems lib/app.rb`
-Run at: http://localhost:4567/test/SpecRunner.html
+
+Run at: [localhost:4567/test/SpecRunner.html](http://localhost:4567/test/SpecRunner.html)
 
 The specs are written in CoffeeScript simply out of curiosity. The spec runner will ignore all .coffee files and only execute the compiled .js files.
 
